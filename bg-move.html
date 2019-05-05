@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.bg{
+			background-image: url("programmer.jpeg");
+			background-repeat: no-repeat;
+			width: 100%;
+			min-height: 100%;
+			height: auto;;
+			position: fixed;
+			z-index: 0;			
+		}
+	</style>
+</head>
+<body>
+	<div class="bg" id="bg"></div>
+</body>
+<script type="text/javascript">
+	$(function() {
+		$(document).ready(function() {
+var pixelToMove = 100;
+$("#bg").mousemove(function(e) {
+var width = $(this).innerWidth();
+var height = $(this).innerHeight();
+var newValueX = (e.pageX / width) * pixelToMove;
+var newValueY = (e.pageY / height) * pixelToMove;
+$(this).css('background-position', newValueX + '%' + ' ' + newValueY + '%');
+});
+});
+
+	})
+</script>
+</html>

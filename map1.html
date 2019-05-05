@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <style type="text/css">
+            .map-book-now{
+                color:#ff8004; 
+                padding:5px 0; 
+                font-weight: 300;
+                font-size:13.5px;
+                cursor: pointer;
+            }
+            .street-address{
+                color: #8c959d;
+                padding: 2px 0 0 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map" style="width: 100%; height: 100%;"></div>
+        <input id="pac-input" class="controls" type="text" placeholder="Search Parking" style="margin-top:50px; position: relative; bottom: 200px; z-index: 999999999; margin-left: -116px !important; width: 94%; height: 40px; border-radius: 6px; outline: 0; border: 1px solid #c4cfd9; padding-left: 8px;" />
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1B5hwKm9TMDSM9E8ybV7qFp15LvxzaSw&libraries=places&callback=initAutocomplete" async defer></script>
+        <script type="text/javascript">
+
+            function initAutocomplete() {
+                var present_lat_long_tmp = window.parent.document.getElementById("present_location").value;
+                var present_lat_long = present_lat_long_tmp.split(",");
+                var p_lat = parseFloat(present_lat_long[0]);
+                var p_long = parseFloat(present_lat_long[1]);
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: p_lat, lng: p_long},
+                    zoom: 13,
+                    //            zoom: 13,
+                    mapTypeId: 'roadmap'
+                });
+                var input = document.getElementById('pac-input');
+                var searchBox = new google.maps.places.SearchBox(input);
+                map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+                map.addListener('bounds_changed', function () {
+                    searchBox.setBounds(map.getBounds());
+                });
+
+                var markers = [
+                    {
+                        "title": 'Park Hospital',
+                        "lat": '28.4200069',
+                        "lng": '77.0461904',
+                        "description": '<div><b style="color:#4270a6;">Park Hospital</b></div> <div class="street-address">Sohna road sec-49,</div><div class="street-address">Gurgaon, 122002(Haryana)</div><div class="map-book-now"> Book Now </div>'
+                    },
+
+                    {
+                        "title": 'Spaze i-tech park',
+                        "lat": '28.4135047',
+                        "lng": '77.0393453',
+                        "description": '<div><b style="color:#4270a6;">Spaze I Tech park</b></div> <div class="street-address">Sohna road sec-49,</div><div class="street-address">Gurgaon, 122002(Haryana)</div><div class="map-book-now"> Book Now </div>'
+                    }
+
+                ];
+
+                var infoWindow = new google.maps.InfoWindow();
+                var image = {
+                    url: 'http://192.168.1.22/MyFirst_F7App/img/map-icon1.png',
+                };
+                for (var i = 0; i < markers.length; i++) {
+                    var data = markers[i];
+                    var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+                    var marker = new google.maps.Marker({
+                        position: myLatlng,
+                        map: map,
+                        icon: image,
+                        title: data.title
+                    });
+
+                    (function (marker, data) {
+                        google.maps.event.addListener(marker, "click", function (e) {
+                            infoWindow.setContent("<div style = 'width:200px;min-height:50px; border-radius:10px;'>" + data.description + "</div>");
+                            infoWindow.open(map, marker);
+                        });
+                    })(marker, data);
+                }
+
+
+
+                var markers = [];
+                /*$('body').on('touchstart', '.pac-container', function (e) {
+                 e.stopImmediatePropagation();
+                 });*/
+                searchBox.addListener('places_changed', function () {
+
+                    var places = searchBox.getPlaces();
+
+                    if (places.length == 0) {
+                        return;
+                    }
+                    markers.forEach(function (marker) {
+                        marker.setMap(null);
+                    });
+                    markers = [];
+                    var bounds = new google.maps.LatLngBounds();
+
+                    places.forEach(function (place) {
+                        if (!place.geometry) {
+                            console.log("Returned place contains no geometry");
+                            return;
+                        }
+                        var icon = {
+                            url: place.icon,
+                            size: new google.maps.Size(71, 71),
+                            origin: new google.maps.Point(0, 0),
+                            anchor: new google.maps.Point(17, 34),
+                            scaledSize: new google.maps.Size(25, 25)
+                        };
+                        markers.push(new google.maps.Marker({
+                            map: map,
+                            icon: icon,
+                            title: place.name,
+                            position: place.geometry.location
+                        }));
+                        // alert(place.geometry.location);
+
+                        if (place.geometry.viewport) {
+                            bounds.union(place.geometry.viewport);
+                        } else {
+                            bounds.extend(place.geometry.location);
+                        }
+                    });
+                    map.fitBounds(bounds);
+                });
+            }
+        </script>
+
+</html>
+</body>

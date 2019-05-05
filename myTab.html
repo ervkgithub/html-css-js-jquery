@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<style type="text/css">
+.container{
+	width: 800px;
+	margin: 0 auto;
+}
+
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+ul.tabs li{
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+ul.tabs li.current{
+	background: #ededed;
+	color: #222;
+}
+
+.tab-content{
+	display: none;
+	background: #ededed;
+	padding: 15px;
+}
+
+.tab-content.current{
+	display: inherit;
+}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="tab-1">Tab One</li>
+            <li class="tab-link" data-tab="tab-2">Tab Two</li>
+            <li class="tab-link" data-tab="tab-3">Tab Three</li>
+            <li class="tab-link" data-tab="tab-4">Tab Four</li>
+        </ul>
+        <div id="tab-1" class="tab-content current">
+            Tab1
+        </div>
+        <div id="tab-2" class="tab-content">
+           Tab2
+        </div>
+        <div id="tab-3" class="tab-content">
+           Tab3 
+        </div>
+        <div id="tab-4" class="tab-content">
+           Tab4
+        </div>
+</div><!-- container -->
+<script type="text/javascript">
+	$(document).ready(function(){
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	});
+});
+</script>
+</body>
+</html>

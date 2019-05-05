@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Captcha</title>
+    
+    <script type="text/javascript">
+
+   //Created / Generates the captcha function    
+    function DrawCaptcha()
+    {
+        var a = Math.ceil(Math.random() * 10)+ '';
+        var b = Math.ceil(Math.random() * 10)+ '';       
+        var c = Math.ceil(Math.random() * 10)+ '';  
+        var d = Math.ceil(Math.random() * 10)+ '';  
+        var e = Math.ceil(Math.random() * 10)+ '';  
+        var f = Math.ceil(Math.random() * 10)+ '';  
+        var g = Math.ceil(Math.random() * 10)+ '';  
+        var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
+        document.getElementById("txtCaptcha").value = code
+    }
+
+    // Validate the Entered input aganist the generated security code function   
+    function ValidCaptcha(){
+        var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+        var str2 = removeSpaces(document.getElementById('txtInput').value);
+        if (str1 == str2) 
+		{
+		return window.location.href = ('http://www.getmyrugs.com'); 
+		}		
+        return alert('Wrong captcha entered');
+        
+    }
+
+    // Remove the spaces from the entered and generated code
+    function removeSpaces(string)
+    {
+        return string.split(' ').join('');
+    }
+    
+ 
+    </script>
+    
+ <!--**********************************************-->
+ 
+	<script>
+		function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+	</script>
+	
+    
+</head>
+
+<body onload="DrawCaptcha();">
+
+
+<!--**********************************************-->
+
+<input id="Button1" type="button" value="Check" onclick="alert(makeid());"/>
+
+<!--**********************************************-->
+
+
+<br><br><br>
+<table align="center">
+<tr>
+    <td>
+        Captcha Demo<br />
+    </td>
+</tr>
+<tr>
+    <td>
+        <input type="text" id="txtCaptcha" 
+
+            style="background-image:url(1.jpg); text-align:center; border:none;
+            font-weight:bold; font-family:Modern" />
+        <input type="button" id="btnrefresh" value="Refresh" onclick="DrawCaptcha();" />
+    </td>
+</tr>
+<tr>
+    <td>
+        <input type="text" id="txtInput"/>    
+    </td>
+</tr>
+<tr>
+    <td>
+        <input id="Button1" type="button" value="Check" onclick="alert(ValidCaptcha());"/>
+    </td>
+</tr>
+</table>
+
+
+<br><br><br>
+<script>
+function getRChar() {
+    return (Math.random() * 26 + 10 | 0).toString(36).toUpperCase();
+}
+
+var s = getRChar() + Math.floor((Math.random() * 9999) * 10);
+
+document.write(s);
+</script>
+</body>
+</html>

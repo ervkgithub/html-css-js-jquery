@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multicolor</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  	select{
+  		outline: 0;
+  		border: 0;  		
+  	}
+  	select:focus{
+  		outline: 0;
+  		border: 0;
+  	}
+  	.theme_btn{
+  		cursor: pointer;
+  	}
+
+  	body{
+  		background: #ccc;
+  	}
+
+  	h3{
+  		color: yellow;
+  	}
+  	p{
+  		color: red;
+  	}
+  	.demo_row{
+  		border: 1px solid #000;
+  		padding: 5px 10px;
+  		border-radius: 6px;
+  		background: #ccc;
+  	}
+
+  </style>
+</head>
+<body>
+<div class="container">
+		<br/><br/>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="row text-center">
+			<select onchange="color.call(this);" style="width: 100px!important; border-radius: 50%; -webkit-appearance: none; padding: 30px; cursor: pointer;  height: 100px!important;">
+				<option value="0">Main</option>
+				<option class="sel_color" value="1">Blue</option>
+				<option class="sel_color" value="2">Black</option>
+				<option class="sel_color" value="3">Green</option>
+			</select>			
+		</div>
+	</div>
+</div>
+<br/><br/><br/>
+	<div class="row text-center demo_row">
+		<div class="col-md-3">
+			<h3>Heading1</h3>
+			<p>Para1</p>
+		</div>
+		<div class="col-md-3">
+			<h3>Heading2</h3>
+			<p>Para2</p>
+		</div>
+		<div class="col-md-3">
+			<h3>Heading3</h3>
+			<p>Para3</p>
+		</div>
+		<div class="col-md-3">
+			<h3>Heading4</h3>
+			<p>Para4</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	var color;
+	$(function(){
+		color = function(){			
+			var color =	this.options[this.selectedIndex].value;
+			if (color == 1) {	
+			$("body").css("background", "blue");	
+			$(".demo_row").css("background", "blue");
+			$("h3").css("color", "pink");
+			$("p").css("color", "green");
+			}
+			if (color == 2) {		
+			$("body").css("background", "black");
+			$(".demo_row").css({"background": "black", "border": "1px solid #fff"});
+			$("h3").css("color", "red");
+			$("p").css("color", "white");
+			}
+			if (color == 3) {		
+			$("body").css("background", "green");
+			$(".demo_row").css("background", "green");
+			$("h3").css("color", "yellow");
+			$("p").css("color", "black");
+			}
+			if (color == 0) {
+				setTimeout(function(){
+				location.reload(true);
+			},50);
+			}
+		}
+	});
+</script>
+
+</body>
+</html>

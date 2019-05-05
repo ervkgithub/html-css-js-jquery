@@ -1,0 +1,23 @@
+
+
+Google Chrome (version 28+):
+
+@supports (-webkit-appearance:none) {
+    nav.tm_navbar {
+        background: green;
+    }
+}       
+
+Mozilla Firefox (all versions):
+
+_:-moz-tree-row(hover), nav.tm_navbar {
+    background: red;
+}       
+
+Internet Explorer (version 10+):
+	
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    nav.tm_navbar {
+        background: blue;
+    }
+}       

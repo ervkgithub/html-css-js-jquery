@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+</head>
+<body onload="get_set_data();">		
+<p>Get data</p>
+<div class="select_value">
+	<div id="get_value" onload="get_set_data();"> hello world </div>
+</div>		
+<p>Set data</p>	
+<div class="selected_value" id="set_data"></div>
+
+<script type="text/javascript">
+	function get_set_data() {
+		var get_value = $("#get_value").html();		
+		
+		var set_data = $("#set_data").html("Set data" + get_value + "Hello set");
+		
+	}
+</script>
+
+</body>
+</html>

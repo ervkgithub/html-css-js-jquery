@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title></title>
+	<style type="text/css">
+		.background {
+    background-color: silver;
+    width: 100px;
+    height: 50px;
+    padding: 0; 
+    margin: 0
+}
+.line1 {
+    width: 112px;
+    height: 47px;
+    border-bottom: 1px dashed red;
+    -webkit-transform:
+        translateY(-20px)
+        translateX(5px)
+        rotate(27deg); 
+    position: absolute;
+    /* top: -20px; */
+}
+.line2 {
+    width: 112px;
+    height: 47px;
+    border-bottom: 1px dashed green;
+    -webkit-transform:
+        translateY(20px)
+        translateX(5px)
+        rotate(-26deg);
+    position: absolute;
+    top: -33px;
+    left: -13px;
+}
+
+p{
+  position:absolute;
+  text-align:center;
+  left:1%;
+  color:red;
+}
+	</style>
+</head>
+<body>
+<div class="background">
+  <p><del>$9999999</del></p>
+    <div class="line1"></div>
+    <div class="line2"></div>
+</div>
+
+<!-- ************************************************************************************************* -->
+
+
+<center><form action="#" method="post" id="myForm">
+
+  Title:
+  <input id="titlenewtide" type="text" name="title" required>
+  <br>Description:
+  <textarea name="description" id="description"></textarea>
+  <br>Tag:
+  <input id="newtag" type="text" name="newtag" required>
+  <br>Category:
+  <input type="radio" name="category" value="19" required>Animation
+  <button type="submit" value="Submit" name="subnewtide" id="subnewtide" disabled="disabled">Submit</button>
+
+</form></center>
+
+
+
+<script type="text/javascript">
+	var inputs = $("form#myForm input, form#myForm textarea");
+
+var validateInputs = function validateInputs(inputs) {
+  var validForm = true;
+  inputs.each(function(index) {
+    var input = $(this);
+    if (!input.val() || (input.type === "radio" && !input.is(':checked'))) {
+      $("#subnewtide").attr("disabled", "disabled");
+      validForm = false;
+    }
+  });
+  return validForm;
+}
+
+
+inputs.change(function() {
+  if (validateInputs(inputs)) {
+    $("#subnewtide").removeAttr("disabled");
+  }
+});
+
+</script>
+</body>
+</html>

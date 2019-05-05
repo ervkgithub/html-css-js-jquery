@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Elastic Image Slideshow with Thumbnail Preview</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Elastic Image Slideshow with Thumbnail Preview">
+        <meta name="keywords" content="jquery, css3, responsive, image, slider, slideshow, thumbnails, preview, elastic">
+        <meta name="author" content="Codrops">
+        <link rel="shortcut icon" href="http://www.jqueryscript.net/demo/favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/demo.css">
+        <link rel="stylesheet" type="text/css" href="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/style.css">
+        <link href="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/css.css" rel="stylesheet" type="text/css">
+		<noscript>
+			<link rel="stylesheet" type="text/css" href="css/noscript.css" />
+		</noscript>
+   </head>
+    <body>
+        <div class="container">
+           
+            <h1>Elastic Image Slideshow with Thumbnail Preview</h1>
+            <div class="wrapper">
+                <div id="ei-slider" class="ei-slider"><div class="ei-slider-loading" style="display: none;">Loading</div>
+                    <ul class="ei-slider-large">
+                        <li style="opacity: 0; z-index: 1;">
+                            <img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/1.jpg" alt="image01" style="width: 1920px; height: 750px; margin-left: 0px; margin-top: -175px;">
+                            <div class="ei-title">
+                                <h2 style="opacity: 0; display: block;">Creative</h2>
+                                <h3 style="opacity: 0; display: block;">Duet</h3>
+                            </div>
+                        </li>
+                        <li style="opacity: 0; z-index: 1; left: 0px;">
+                            <img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/2.jpg" alt="image02" style="width: 1920px; height: 750px; margin-left: 0px; margin-top: -175px;">
+                            <div class="ei-title">
+                                <h2 style="opacity: 0; margin-right: 0px; display: block;">Friendly</h2>
+                                <h3 style="opacity: 0; margin-right: 0px; display: block;">Devil</h3>
+                            </div>
+                        </li>
+                        <li style="opacity: 1; z-index: 10; left: 0px;">
+                            <img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/3_002.jpg" alt="image03" style="width: 1920px; height: 750px; margin-left: 0px; margin-top: -175px;">
+                            <div class="ei-title">
+                                <h2 style="opacity: 1; margin-right: 0px; display: block;">Tranquilent</h2>
+                                <h3 style="opacity: 1; margin-right: 0px; display: block;">Compatriot</h3>
+                            </div>
+                        </li>
+                        <li style="opacity: 0; z-index: 1; left: 0px;">
+                            <img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/4_002.jpg" alt="image04" style="width: 1920px; height: 750px; margin-left: 0px; margin-top: -175px;">
+                            <div class="ei-title">
+                                <h2 style="opacity: 0; margin-right: 5.66545px; display: block;">Insecure</h2>
+                                <h3 style="opacity: 0; margin-right: -5.66545px; display: block;">Hussler</h3>
+                            </div>
+                        </li>
+                        <li style="opacity: 0; z-index: 1; left: 0px;">
+                            <img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/5_002.jpg" alt="image05" style="width: 1920px; height: 750px; margin-left: 0px; margin-top: -175px;">
+                            <div class="ei-title">
+                                <h2 style="opacity: 0; margin-right: 2.56778px; display: block;">Loving</h2>
+                                <h3 style="opacity: 0; margin-right: -2.56778px; display: block;">Rebel</h3>
+                            </div>
+                        </li>
+                        <li style="opacity: 0; z-index: 1; left: 0px;">
+                            <img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/6_002.jpg" alt="image06" style="width: 1920px; height: 750px; margin-left: 0px; margin-top: -175px;">
+                            <div class="ei-title">
+                                <h2 style="opacity: 0; margin-right: 6.10725px; display: block;">Passionate</h2>
+                                <h3 style="opacity: 0; margin-right: -6.10725px; display: block;">Seeker</h3>
+                            </div>
+                        </li>
+                        <li style="opacity: 0; z-index: 1; left: 0px;">
+                            <img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/7.jpg" alt="image07" style="width: 1920px; height: 750px; margin-left: 0px; margin-top: -175px;">
+                            <div class="ei-title">
+                                <h2 style="opacity: 0; margin-right: 0px; display: block;">Crazy</h2>
+								<h3 style="opacity: 0; margin-right: 0px; display: block;">Friend</h3>
+                            </div>
+                        </li>
+                    </ul><!-- ei-slider-large -->
+                    <ul class="ei-slider-thumbs" style="display: block; max-width: 1050px;">
+                        <li class="ei-slider-element" style="max-width: 150px; width: 14.2857%; left: 300px;">Current</li>
+                        <li style="max-width: 150px; width: 14.2857%;"><a href="#">Slide 1</a><img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/1_002.jpg" alt="thumb01"></li>
+                        <li style="max-width: 150px; width: 14.2857%;"><a href="#">Slide 2</a><img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/2_002.jpg" alt="thumb02"></li>
+                        <li style="max-width: 150px; width: 14.2857%;"><a href="#">Slide 3</a><img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/3.jpg" alt="thumb03"></li>
+                        <li style="max-width: 150px; width: 14.2857%;"><a href="#">Slide 4</a><img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/4.jpg" alt="thumb04"></li>
+                        <li style="max-width: 150px; width: 14.2857%;"><a href="#">Slide 5</a><img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/5.jpg" alt="thumb05"></li>
+                        <li style="max-width: 150px; width: 14.2857%;"><a href="#">Slide 6</a><img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/6.jpg" alt="thumb06"></li>
+                        <li style="max-width: 150px; width: 14.2857%;"><a href="#">Slide 7</a><img src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/7_002.jpg" alt="thumb07"></li>
+                    </ul><!-- ei-slider-thumbs -->
+                </div><!-- ei-slider -->
+                <div class="reference">
+					<p class="demos"><span>Demo 1<span> | <a href="http://www.jqueryscript.net/demo/ElasticSlideshow/index2.html">Demo 2 (with autoplay)</a></span></span></p>
+         
+                    <p>Resize the window to see the slider adjusting</p>
+<p><a href="http://www.jqueryscript.net/"><strong>Jquery Plugins,Examples and Scripts</strong></a></p>
+                </div>
+            </div><!-- wrapper -->
+        </div>
+        <script type="text/javascript" src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/jquery_002.js"></script>
+        <script type="text/javascript" src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/jquery_003.js"></script>
+        <script type="text/javascript" src="Elastic%20Image%20Slideshow%20with%20Thumbnail%20Preview_files/jquery.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#ei-slider').eislideshow({
+					easing		: 'easeOutExpo',
+					titleeasing	: 'easeOutExpo',
+					titlespeed	: 1200
+                });
+            });
+        </script>
+    
+</body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		 .acc{
+			background: #ccc;
+			 color: #202020;
+			 padding: 15px 15px 15px 15px;
+			 margin:5px auto 5px auto;
+			 list-style: none;
+			 width: 70%;
+			 cursor: pointer;
+			 border-radius: 6px;
+			 text-align: center;
+		}
+		.content{
+			display: none;
+			clear: both;
+			padding: 10px;
+			border: 1px solid #ccc;
+			width: 70%;
+			margin:10px auto 10px auto;
+			border-radius: 6px;
+			min-height: 200px;
+			height: auto;
+		}
+		.active{
+			display: block;
+			clear: both;
+		}
+	</style>
+</head>
+<body style="margin: 0;">
+<div class="faq_wrap" style="margin: 100px 0;">
+<div class="acc" data-tab="tab-1" style="color: #fff;">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</div>
+<div class="content active" id="tab-1">Content1</div>
+<div class="acc" data-tab="tab-2">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</div>
+<div class="content" id="tab-2">Content2</div>
+<div class="acc" data-tab="tab-3"> Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsums</div>
+<div class="content" id="tab-3">Content3</div>
+</div>
+<script type="text/javascript">
+	$(document).on("click", ".acc", function(){
+		$(".acc").css("color", "black");
+		$(this).css("color", "white");
+		//var tab_id = $(this).attr("data-tab");
+		var tab_id = $(this).data("tab");
+		$(".content").removeClass("active");
+		$("#" + tab_id).delay(500).addClass("active");
+	});
+</script>
+</body>
+</html>

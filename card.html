@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		.container{
+			width: 95%;
+		}
+		.card{
+			background-color: brown;
+			color: #fff;
+			padding: 15px;
+			text-align: center;
+			margin: 300px auto;
+			width: 300px;
+		}
+		div{
+			transform: rotate(0deg);
+		}
+		div:hover{
+			transform: rotate(360deg);
+			transition:transform 10s;
+		}
+		div{
+			transition:transform 15s;
+		}
+	</style>
+</head>
+<body>
+	<div class="card">	
+		fsasfasg	
+	</div>
+<script type="text/javascript">
+	(function($){
+		alert("sasd");
+	$(document).ajaxStart(function(){
+		alert("Started");
+		console.log("dfDF");
+	});
+	$(document).ajaxComplete(function(){
+		alert("stopped");
+		console.log("dfDF");
+	});
+	JQuery(());
+</script>
+</body>
+</html>

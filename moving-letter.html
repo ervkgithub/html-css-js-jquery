@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="anime.js"></script>
+<style type="text/css">
+	.ml5 {
+  position: relative;
+  font-weight: 300;
+  font-size: 4.5em;
+  color: red;
+}
+
+.ml5 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+  line-height: 1em;
+}
+
+.ml5 .line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 3px;
+  width: 100%;
+  background-color: #402d2d;
+  transform-origin: 0.5 0;
+}
+
+.ml5 .letters {
+  display: inline-block;
+  opacity: 0;
+}
+
+/*Moving letter css end*/
+
+.center-wrap{
+	height: 500px;
+    position: relative;
+    width: 100%;
+}
+
+.center-content{
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-content2{
+	width: 20%;	
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+</style>
+</head>
+<body style="background-color: #f3e9c6;;">
+
+<!--Moving letter html -->
+<h1 class="ml5" align="center">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letters letters-left">Pensys Software</span>
+    <span class="letters letters-right" style="color: blue;">Private Limited</span>
+    <span class="line line2"></span>
+  </span>
+</h1>
+<!--Moving letter html end-->
+
+<div class="center-wrap">
+	<div class="center-content">
+		<h1>Hello Center ello Center</h1>
+	</div>
+</div>
+
+<div class="center-wrap2">
+	<div class="center-content2">
+		<h1>Hello Center ello Center Hello Hello Center ello Center Hello</h1>
+	</div>
+</div>
+
+<!-- Movung letter js -->
+<script type="text/javascript">
+  anime.timeline({loop: true})
+  .add({
+    targets: '.ml5 .line',
+    opacity: [0.5,1],
+    scaleX: [0, 1],
+    easing: "easeInOutExpo",
+    duration: 700
+  }).add({
+    targets: '.ml5 .line',
+    duration: 600,
+    easing: "easeOutExpo",
+    translateY: function(e, i, l) {
+      var offset = -0.625 + 0.625*2*i;
+      return offset + "em";
+    }
+  }).add({
+    targets: '.ml5 .letters-left',
+    opacity: [0,1],
+    translateX: ["0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=300'
+  }).add({
+    targets: '.ml5 .letters-right',
+    opacity: [0,1],
+    translateX: ["-0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=600'
+  }).add({
+    targets: '.ml5',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+</script>
+
+<!-- Moving letter js end -->
+</body>
+</html>

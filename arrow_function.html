@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ternary Operator and Arrow Function</title>
+</head>
+<body onload="hello();">
+<script type="text/javascript">
+
+	// Ternary operator
+	function hello(){
+		var a = 20;
+		 (a > 15) ? alert("Ternary operator"+ (20-10)) : alert("Ternary operator " + (10+10));		
+	}	
+	//Arrow Function	
+	var arrFun = (x, y) => { return x * y };
+	alert("Arrow function " + arrFun(7, 7));
+
+	// Normal function 
+	var norFun = function(x, y){
+		return x * y;
+	}
+	alert("Normal function " + norFun(10, 10));
+
+</script>
+</body>
+</html>

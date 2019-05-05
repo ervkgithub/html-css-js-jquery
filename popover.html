@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row">
+    <br><br><br><br>
+		<button id="example" type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right">
+  Popover on right
+
+</button>
+	</div>
+    <div id="content" style="display: none;">
+        
+<h4>Bootstrap:<h4>
+<p>
+Hi! Bootstrap 3 rules!
+Hi! Bootstrap 3 rules!
+Hi! Bootstrap 3 rules!
+Hi! Bootstrap 3 rules!
+Hi! Bootstrap 3 rules!
+Hi! Bootstrap 3 rules!
+</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+	var ops = {
+    'html':true,    
+    content: function(){
+        return $('#content').html();
+    }
+};
+
+$(function(){
+    $('#example').popover(ops)
+});
+
+</script>
+</body>
+</html>

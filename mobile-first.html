@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mobile First Design</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		.container{
+			width: 100%;			
+		}
+		.clear{
+			clear: both;
+		}
+		.col-100{
+			background-color: yellow;
+			height: 100px;
+		}
+		.col-33{
+			width: 100%;
+			background-color: red;
+			height: 150px;
+			border:1px solid #fff;
+		}
+		.col-50{
+			width: 100%;
+			background-color: green;
+			height: 150px;
+			border:1px solid #fff;
+		}
+		@media screen and (min-width:768px ){
+			.col-33{
+				width: 32%;
+				float: left;
+			}
+			.col-50{
+				width: 49%;
+				float: left;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-100"></div>
+	</div>
+	<div class="row">
+		<div class="col-50"></div>
+		<div class="col-50"></div>		
+	</div>
+	<div class="clear"></div>
+	<div class="row">
+		<div class="col-33"></div>
+		<div class="col-33"></div>	
+		<div class="col-33"></div>	
+	</div>
+	<div class="clear"></div>
+	<div class="row">
+		<div class="col-100"></div>
+	</div>
+</div>
+</body>
+</html>

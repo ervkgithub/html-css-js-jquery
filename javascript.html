@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			$(".enter_submit").on("keypress", function(e){
+				if(e.keyCode==13){					
+				//	this.form.submit();
+					var user_name = $("#user_name").val();
+					alert("Pressed" +user_name);
+					document.location.href = "http://www.parkgenie.in";
+				//	return false;
+				}
+			});
+		
+		});
+	</script>
+</head>
+<body>
+<form>
+	<input class="enter_submit" name="" id="user_name">
+</form>
+</body>
+</html>

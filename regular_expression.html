@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regular expression</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+<input type="text" name="" id="password">
+
+<input type="button" id="submit_password" value="Test">
+
+<script type="text/javascript">
+	$(function(){
+	$(document).on("click", "#submit_password", function(){
+		var str = $("#password").val();
+		alert(str);
+		var regExp = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    	var checkStr = regExp.test(str);
+    	if (checkStr == "1") {
+    		alert("Password matched");
+    	}
+    	else{
+    		alert("Password should atleast one number, alphabet and special character");
+    	}
+	});
+	});
+</script>
+</body>
+</html>

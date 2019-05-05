@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Javascript Demo</title>
+	<style>
+		body{
+			background:#eee;
+		}
+		
+		#progress{
+			top:50%;
+			left:50%;
+			position:absolute;
+			color:#0000ff;
+		}
+	</style>
+  </head>
+  <body>
+    
+	<script>
+		$(document).ready(function(){
+		loadPage();
+		});
+		function loadPage(url) {
+		$('body').append('<div id="progress"><h1>Loading...<h1></div>');
+		if (url == undefined) {
+		$('#container').load('index.html #header ul', hijackLinks);
+		} else {
+		$('#container').load(url + ' #content', hijackLinks);
+		}
+		}
+		function hijackLinks() {
+		$('#container a').click(function(e){
+		e.preventDefault();
+		loadPage(e.target.href);
+		});
+		$('#progress').remove();
+		}
+	</script>
+
+		<script>
+		
+		</script>
+  </body>
+</html>

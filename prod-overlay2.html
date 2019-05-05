@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.wrapper{
+	width:80%;
+	margin:0 auto;
+}
+
+.box2{
+    position: relative;
+    width: 20%;
+	float:left;
+	margin:10px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.box2:hover .image {
+  opacity: 0.8;
+}
+
+.box2:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #eee;
+  color: #484848;
+  font-size: 16px;
+  padding: 16px 32px;
+  width:200px;
+}
+
+
+h1 {
+ overflow: hidden;
+ text-align: center;
+}
+h1:before,
+h1:after {
+ background-color: #333;
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ width: 50%;
+}
+h1:before {
+ right: 0.5em;
+ margin-left: -50%;
+}
+h1:after {
+ left: 0.5em;
+ margin-right: -50%;
+}
+
+
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="box2">
+  <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text">Hello World Hello World</div>
+  </div>
+</div>
+<div class="box2">
+  <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text">Hello World Hello World</div>
+  </div>
+</div>
+<div class="box2">
+  <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text">Hello World Hello World</div>
+  </div>
+</div>
+<div class="box2">
+  <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text">Hello World Hello World</div>
+  </div>
+</div>
+</div>
+  <div class="clear:both;"></div>
+  
+  <h1>Hello Heading</h1>
+  
+</body>
+</html>

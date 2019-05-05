@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Javascript Demo</title>
+	<style>
+		
+	html, body, div, span, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	abbr, address, cite, code,
+	del, dfn, em, img, ins, kbd, q, samp,
+	small, strong, sub, sup, var,
+	b, i,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section, summary,
+	time, mark, audio, video {
+    margin:0;
+    padding:0;
+    outline:0;
+    vertical-align:baseline;
+    background:transparent;
+		}
+	
+	body{
+	margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px;
+	
+	}
+	.inner-banner {
+    background-image: url("inner-banner.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+	height:90px;
+		}
+	.container{
+		margin:0 auto;
+		width:1100px;
+	}
+	
+	.breadcrumb li{
+		display:inline;
+		margin:10px;
+		padding:10px;
+	}
+	
+	.fa-home{
+		border:2px solid #fff;
+		width:50px;
+		height:20px;
+		border-radius:5px;
+		color:#fff;
+	}
+	
+	</style>
+  </head>
+  <body>
+    
+	<div class="inner-banner">
+	<div class="container">
+    	<h1>Syncing Process of Mobile Device and ERP using Azure Mobile Services</h1>
+        <ol class="breadcrumb">
+          	<li><a href="#"><i class="fa fa-home"></i></a></li>
+            <li><a href="#" oncontextmenu=”return false;”>Technology Tips &amp; Tricks</a></li>
+            <li class="active" oncontextmenu=”return false;”>Syncing Process of Mobile Device and ERP using Azure Mobile Services</li>
+        </ol>
+    </div>
+	</div>
+
+	<!-- Dissabling Right cl  ick in website -->
+	
+	<script language=JavaScript>
+	var message="You Can't inspect";
+
+	function clickIE4(){
+	if (event.button==2){
+	alert(message);
+	return false;
+	}
+	}
+	function clickNS4(e){
+	if (document.layers||document.getElementById&&!document.all){
+	if (e.which==2||e.which==3){
+	alert(message);
+	return false;
+	}
+	}
+	}
+	if (document.layers){
+	document.captureEvents(Event.MOUSEDOWN);
+	document.onmousedown=clickNS4;
+	}
+	else if (document.all&&!document.getElementById){
+	document.onmousedown=clickIE4;
+	}
+	document.oncontextmenu=new Function("alert(message);return false")
+
+	</script>
+	
+  </body>
+</html>

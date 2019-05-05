@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style> 
+.animate{
+    width: 300px;
+    margin: 0 auto;
+}
+.myAnim {
+    /*width: 100px;
+    height: 100px;*/
+    padding: 50px;
+    position :relative;
+    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 5s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes mymove {
+    from {
+        top: 0px;
+    }
+    /*50% {
+        top: 30px !important
+        } */
+    to {
+        top: 60px;
+    }
+}
+
+.myAnim1 {
+    -webkit-animation: mymove 5s; /* Safari 4.0 - 8.0 */
+    animation: mymove 5s;
+}
+
+</style>
+</head>
+<body>
+
+<div class="animate">
+<div class="myAnim" style="display: table;">
+<p style="display: table-cell; vertical-align: middle; color: #fff; text-align: center;">
+    <!-- <img src="sign-in.png" width="50" /> -->
+    <h4>Hello Animation</h4>
+</p>
+</div>
+</div>
+
+
+<script type="text/javascript">
+    $(function() {
+        setTimeout(function(){
+            $(".myAnim").addClass("myAnim1");
+            $(".animate").html("");
+        },30000);        
+    })
+</script>
+</body>
+</html>

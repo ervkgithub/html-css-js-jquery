@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<style type="text/css">
+	body, html {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+section {
+	width: 100%;
+    height:100%;
+    color:#fff;
+    display: table;
+    font-size: 25px;
+}
+	.sec1{
+		background-color: green;		
+	}
+	.sec2{
+		background-color: blue;
+	}
+	.sec3{
+		background-color: red;
+	}
+	.sec4{
+		background-color: brown;
+	}
+	.center{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+<section class="sec1">
+<div class="center">
+<div class="first">First</div>
+</div>
+
+</section>
+<section class="sec2">
+<div class="center">Second</div>
+</section>
+<section class="sec3">
+<div class="center">Third</div>
+</section>
+<section class="sec4">
+<div class="center">Fourth</div>
+</section>	
+<script type="text/javascript">
+    $('section').height($(window).height());
+    $('section').first().addClass('active');
+    $(document).on('mousewheel DOMMouseScroll', function (e) {
+    	console.log("ddd");
+        e.preventDefault();
+        var active = $('section.active');
+        var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
+        if (delta < 0) {
+            next = active.next();
+            if (next.length) {
+                var timer = setTimeout(function () {
+                    $('body, html').animate({
+                        scrollTop: next.offset().top
+                    }, 'slow');
+                    next.addClass('active')
+                        .siblings().removeClass('active');
+                    
+                    clearTimeout(timer);
+                }, 800);
+            }
+
+        } else {
+            prev = active.prev();
+
+            if (prev.length) {
+                var timer = setTimeout(function () {
+                    $('body, html').animate({
+                        scrollTop: prev.offset().top
+                    }, 'slow');
+
+                    prev.addClass('active')
+                        .siblings().removeClass('active');
+                    
+                    clearTimeout(timer);
+                }, 800);
+            }
+
+        }
+    });
+</script>
+</body>
+</html>

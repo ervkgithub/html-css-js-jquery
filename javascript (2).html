@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		p{
+			font-size: 16px;
+		}
+		h4{
+			font-size: 100px;
+		}
+	</style>
+</head>
+<body>
+	<input type="number" id="pincode" onkeyup="javascript: if (this.value.length >= 6) {
+                                                                            this.value = this.value.substring(0, 6);
+                                                                            return false;
+                                                                        }">
+	<input type="submit" value="Check" onclick="validate_pincode();">
+
+<!--<p>A<sup>+</sup></p><div><h4>A<sup>-</sup></h4></span>-->
+
+<!-- <input type="text" placeholder="Enter pincode" name="fname" id="input_num" /><br/><br/>
+<input type="text" placeholder="Confirm pincode" name="lname" id="input_num2" /><br/><br/>
+<input type="button" value="Submit" disabled="" id="submit_btn" /> -->
+<!--  <script type="text/javascript">
+	$(function() {		
+		$(document).on("keypress","#input_num, #input_num2", function(){
+			var input_num = $("#input_num").val();	
+			var input_num2 = $("#input_num2").val();		
+			if(input_num.length > 3 || input_num2.length > 3){
+				// $("#submit_btn").prop('disabled', false);
+				$("#submit_btn").attr('disabled') = false;				
+			}					
+		});
+	})
+</script> -->
+
+ <!-- <script type="text/javascript">	
+	// var array1 = ["Vijay", "Kumar", "Singh"];
+	// var array2 = ["Vijay", "Kumar", "Singh"];
+	class Rectangle{
+		constructor(height, width){
+			this.height = height;
+			this.width = width;			
+		}
+	get area(){
+		return this.rArea();
+	}
+	rArea(){
+		return this.width * this.height;
+	}
+	//console.log("Area is:" + new square(10,20,20).area);
+	}
+	class square new Rectangle{
+		constructor(10,20){
+
+		}
+	}
+
+//const square = new Rectangle(10, 10);
+
+console.log(square.area); // 100
+
+</script> -->
+
+<!-- <script type="text/javascript">
+	var main = {
+    country: {
+    	states:{
+    		1:"Bihar",
+    		2:"Delhi",
+    		3:"Haryana"
+    	}
+    },    
+}
+
+var data = main['country']['states'];
+
+</script> -->
+<script type="text/javascript">
+
+// alert(main.addition(50,10));
+// alert(main.substract(50,10));
+// alert(main.multiplication(50,10));
+// alert(main.division(50,10));
+
+	function validate_pincode(){
+		var pincode = $("#pincode").val();
+	var pincode_length = pincode.length;
+		if(pincode_length < 6 || pincode_length >6){
+			return false;
+		}
+		else{
+			alert("Pincode is ok");
+		}
+	}
+
+
+		$("p").on("click", function(){	
+		var fs = parseInt($(this).css("font-size"));		
+		fs = fs + 1 + "px";
+		$("p").css({'font-size' : fs});
+		});
+
+		$("h4").on("click", function(){	
+		var fs = parseInt($(this).css("font-size"));		
+		fs = fs - 1 + "px";
+		$("h4").css({'font-size' : fs});
+		});
+
+
+                var status_arr = ["0", "1", "2", "3"]
+    
+                
+    
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCtype html>
+<html>
+<head>
+	<title>Demo Calculator</title>
+	<style type="text/css">
+		input{
+			width: 40px;
+			height: 35px;
+			margin: 5px;
+		}
+		table{
+			margin: auto;
+			border:2px solid #ccc;
+			padding: 10px 15px;
+			border-radius: 20px;			
+		}
+		.t1{
+    width:91%;
+	height:40px;
+    font-size:20px;
+    text-align:right;
+	  padding:0 10px;
+  }	
+  .t1:focus{
+	border: 1px solid green;
+  }
+	</style>
+</head>
+<body>
+<form>
+<table>
+	<tr><td>
+		<input type="text" name="input" class="t1">
+	</td></tr>
+	<tr>
+		<td>
+			<input type="button" name="one"   value="1" OnClick="input.value += '1'">
+			<input type="button" name="two"   value="2" OnCLick="input.value += '2'">
+			<input type="button" name="three" value="3" OnClick="input.value += '3'">
+			<input type="button" name="four"  value="4" OnClick="input.value += '4'">			
+			<input type="button" name="five"  value="5" OnCLick="input.value += '5'">
+			<br>
+			<input type="button" name="six"   value="6" OnClick="input.value += '6'">
+			<input type="button" name="seven" value="7" OnClick="input.value += '7'">
+			<input type="button" name="eight" value="8" OnCLick="input.value += '8'">			
+			<input type="button" name="nine"  value="9" OnClick="input.value += '9'">
+			<input type="button" name="zero"  value="0" OnClick="input.value += '0'">
+			<br>
+			<input type="button" name="plus"  value="+" OnClick="input.value += '+'">
+			<input type="button" name="minus" value="-" OnClick="input.value += '-'">
+			<input type="button" name="multi" value="*" OnClick="input.value += '*'">
+			<input type="button" name="div"   value="/" OnClick="input.value += '/'">			
+			<input type="button" name="equal"   value="=" OnClick="input.value = eval(input.value)">			
+			<br>
+			<input type="button" name="Backspace"  value="Del" OnClick="input.value = input.value.slice(0,input.value.length-1) ">
+			<input type="button" name="clear"   value="clear" OnClick="input.value = ''">
+			<input type="button" name="sqrt"   value="Square" OnClick="input.value = input.value= input.value*input.value">
+			<input type="button" name="cube"   value="Cube" OnClick="input.value = input.value= input.value*input.value*input.value">
+		</td>		
+	</tr>
+</table>
+</form>
+</body>
+</html>

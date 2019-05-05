@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<style type="text/css">
+		
+
+	</style>
+</head>
+<body>
+<br>
+<input type="text" name="" id="txt" class="txt">
+
+<script type="text/javascript">
+	$(function(){
+		var txt = $(".txt").val();
+		var= txt_len = txt.length;
+			var id = 12345;
+			if(txt_len == 5){
+			$("#txt").on("keydown", function(){
+					alert("hello");
+			});
+			}
+			else{
+				alert("hi");
+			}
+		
+	});
+
+</script>
+</body>
+</html>

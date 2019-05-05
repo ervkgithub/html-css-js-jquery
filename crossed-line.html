@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.crossed-box {
+    border:1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    padding: 0; 
+    margin: 0
+    
+}
+.line1 {
+    width: 43px;
+    height: 45px;
+    border-bottom: 1px solid #666;
+    -webkit-transform:
+        translateY(-25px)
+        translateX(9px)
+        rotate(45deg); 
+    position: absolute;
+}
+.line2 {
+     width: 43px;
+    height: 45px;
+    border-bottom: 1px solid #666;
+    -webkit-transform:
+        translateY(18px)
+        translateX(0px)
+        rotate(-46deg);
+    position: absolute;
+    top: -33px;
+    left: -13px;
+}
+</style>
+</head>
+<body>
+
+<div class="crossed-box">
+    <div class="line1"></div>
+    <div class="line2"></div>
+</div>
+
+</body>
+
+</html>

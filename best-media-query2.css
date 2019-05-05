@@ -1,0 +1,36 @@
+//default
+@media only screen {
+    ...
+}
+//640 x 480
+@media only screen and (max-width:640px) and (max-height:480px) {
+    ...
+}
+//1024 x 768
+@media only screen and (max-width:1024px) and (max-height:768px) {
+    ...
+}
+//1152 x 864
+@media only screen and (max-width:1152px) and (max-height:864px) {
+    ...
+}
+//1152 x 960
+@media only screen and (max-width:1152px) and (max-height:960px) {
+    ...
+}
+//1280 x 800
+@media only screen and (max-width:1280px) and (max-height:800px) {
+    ...
+}
+//1280 x 960
+@media only screen and (max-width:1280px) and (max-height:960px) {
+    ...
+}
+//1280 x 960+
+@media only screen and (max-width:1280px) and (min-height:961px) {
+    ...
+}
+//1280+ x 899
+@media only screen and (min-width:1281px) and (max-height:899px) {
+    ...
+}
